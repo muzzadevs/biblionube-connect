@@ -24,12 +24,11 @@ export default function BibliaPage() {
 
   const booksByTypeData = [
     { name: 'Pentateuco', count: 5 },
-    { name: 'Históricos', count: 12 },
+    { name: 'Históricos', count: 13 },
     { name: 'Poéticos', count: 5 },
     { name: 'Profetas mayores', count: 5 },
     { name: 'Profetas menores', count: 12 },
     { name: 'Evangelios', count: 4 },
-    { name: 'Historia', count: 1 },
     { name: 'Epístolas paulinas', count: 13 },
     { name: 'Epístolas generales', count: 8 },
     { name: 'Apocalíptico', count: 1 },
@@ -40,12 +39,6 @@ export default function BibliaPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <header className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-burgundy mb-2">La Biblia</h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Explora información sobre la Biblia, sus subdivisiones, capítulos, versículos y más.
-        </p>
-      </header>
 
       <section className="mb-12">
         <h2 className="section-heading text-center mb-6">Estructura de la Biblia</h2>
@@ -145,7 +138,7 @@ export default function BibliaPage() {
       </section>
 
       <section className="mb-12">
-        <h2 className="section-heading text-center mb-6">Estadísticas y Visualizaciones Bíblicas</h2>
+        <h2 className="section-heading text-center mb-6">Estadísticas Bíblicas</h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Card>
             <CardHeader>
@@ -243,12 +236,12 @@ export default function BibliaPage() {
                   <span className="font-medium">31,102</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Palabras (aproximadamente):</span>
-                  <span className="font-medium">783,137</span>
+                  <span>Palabras:</span>
+                  <span className="font-medium">~783,137</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Letras (aproximadamente):</span>
-                  <span className="font-medium">3,566,480</span>
+                  <span>Letras:</span>
+                  <span className="font-medium">~3,566,480</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Idiomas originales:</span>
@@ -277,11 +270,11 @@ export default function BibliaPage() {
                 </li>
                 <li className="flex justify-between">
                   <span>Versículo más corto:</span>
-                  <span className="font-medium">Juan 11:35 ("Jesús lloró")</span>
+                  <span className="font-medium">Éxodo 20:13 ("No matarás")</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Versículo del medio:</span>
-                  <span className="font-medium">Salmo 118:8</span>
+                  <span>Ecuador de la Biblia:</span>
+                  <span className="font-medium">Salmo 118</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Período de escritura:</span>
