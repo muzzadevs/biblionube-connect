@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Inicio", href: "/", icon: <BookOpen className="h-4 w-4 mr-2" /> },
-    { name: "Bibliología", href: "/bibliologia", icon: <Book className="h-4 w-4 mr-2" /> },
+    { name: "Biblia", href: "/biblia", icon: <Book className="h-4 w-4 mr-2" /> },
     { name: "Ayudas", href: "/ayudas", icon: <HelpCircle className="h-4 w-4 mr-2" /> },
     { name: "Herramientas", href: "/herramientas", icon: <Wrench className="h-4 w-4 mr-2" /> },
   ];

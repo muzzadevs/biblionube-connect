@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import BiblioliogiaPage from "./pages/BiblioliogiaPage";
+import BibliaPage from "./pages/BibliaPage";
 import AyudasPage from "./pages/AyudasPage";
 import BookDetailPage from "./pages/BookDetailPage";
 import HerramientasPage from "./pages/HerramientasPage";
@@ -25,7 +25,7 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/bibliologia" element={<BiblioliogiaPage />} />
+              <Route path="/biblia" element={<BibliaPage />} />
               <Route path="/ayudas" element={<AyudasPage />} />
               <Route path="/ayudas/:testamento/:libro" element={<BookDetailPage />} />
               <Route path="/herramientas" element={<HerramientasPage />} />

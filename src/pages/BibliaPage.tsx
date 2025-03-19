@@ -1,39 +1,52 @@
 
-import { Book, BookOpen, FileText, LibraryBig, ChevronRight, BookText } from "lucide-react";
+import { Book, BookOpen, FileText, LibraryBig, ChevronRight, BookText, BarChart2 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell
+} from "recharts";
 
-export default function BiblioliogiaPage() {
+export default function BibliaPage() {
+  // Data for Bible statistics chart
+  const bookCountData = [
+    { name: 'Ant. Test.', value: 39, color: '#7B1D1D' },
+    { name: 'Nuevo Test.', value: 27, color: '#BE123C' },
+  ];
+
+  const booksByTypeData = [
+    { name: 'Pentateuco', count: 5 },
+    { name: 'Históricos', count: 12 },
+    { name: 'Poéticos', count: 5 },
+    { name: 'Profetas mayores', count: 5 },
+    { name: 'Profetas menores', count: 12 },
+    { name: 'Evangelios', count: 4 },
+    { name: 'Historia', count: 1 },
+    { name: 'Epístolas paulinas', count: 13 },
+    { name: 'Epístolas generales', count: 8 },
+    { name: 'Apocalíptico', count: 1 },
+  ];
+
+  const COLORS = ['#7B1D1D', '#BE123C', '#E11D48', '#F43F5E', '#FB7185', 
+                  '#881337', '#9F1239', '#D70040', '#A3154D', '#C8326B'];
+
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-burgundy mb-2">Bibliología</h1>
+        <h1 className="text-3xl font-bold text-burgundy mb-2">La Biblia</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Explora recursos para entender la Bibliología, datos sobre la Biblia, sus subdivisiones, capítulos, versículos y más.
+          Explora información sobre la Biblia, sus subdivisiones, capítulos, versículos y más.
         </p>
       </header>
-
-      <section className="mb-12 max-w-4xl mx-auto bg-white rounded-xl p-6 shadow-sm">
-        <div className="flex items-center mb-4">
-          <Book className="h-6 w-6 text-burgundy mr-2" />
-          <h2 className="text-xl font-semibold">¿Qué es la Bibliología?</h2>
-        </div>
-        <p className="text-gray-700 mb-4">
-          La Bibliología es el estudio de la Biblia como libro, incluyendo su origen, estructura, idiomas originales, inspiración, 
-          canonicidad, transmisión, preservación y autoridad. Es una disciplina que nos ayuda a entender cómo llegó la Biblia a nosotros 
-          y por qué podemos confiar en ella.
-        </p>
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-          <h3 className="font-medium mb-2 text-burgundy">Aspectos principales de la Bibliología:</h3>
-          <ul className="list-disc pl-5 space-y-1 text-gray-700">
-            <li>Revelación: Cómo Dios se ha dado a conocer a la humanidad</li>
-            <li>Inspiración: Cómo Dios guió a los autores humanos</li>
-            <li>Canonicidad: Cómo se determinaron los libros que componen la Biblia</li>
-            <li>Transmisión textual: Cómo se ha preservado el texto a lo largo de los siglos</li>
-            <li>Traducción: Principios para trasladar el texto a otros idiomas</li>
-            <li>Interpretación: Métodos para entender correctamente el texto bíblico</li>
-          </ul>
-        </div>
-      </section>
 
       <section className="mb-12">
         <h2 className="section-heading text-center mb-6">Estructura de la Biblia</h2>
@@ -133,7 +146,75 @@ export default function BiblioliogiaPage() {
       </section>
 
       <section className="mb-12">
-        <h2 className="section-heading text-center mb-6">Estadísticas Bíblicas</h2>
+        <h2 className="section-heading text-center mb-6">Estadísticas y Visualizaciones Bíblicas</h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center text-burgundy">
+                <BarChart2 className="h-5 w-5 mr-2" />
+                Distribución de Libros por Tipo
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-80">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={booksByTypeData}
+                    margin={{ top: 20, right: 30, left: 20, bottom: 70 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis 
+                      dataKey="name" 
+                      angle={-45} 
+                      textAnchor="end" 
+                      height={70} 
+                      tick={{ fontSize: 12 }}
+                    />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="count" fill="#BE123C" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center text-burgundy">
+                <BarChart2 className="h-5 w-5 mr-2" />
+                Libros por Testamento
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-80">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={bookCountData}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={true}
+                      outerRadius={100}
+                      fill="#8884d8"
+                      dataKey="value"
+                      label={({name, percent}) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    >
+                      {bookCountData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <Tooltip formatter={(value) => [`${value} libros`, 'Cantidad']} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="section-heading text-center mb-6">Estadísticas Bíblicas Detalladas</h2>
         <div className="max-w-4xl mx-auto bg-white rounded-xl p-6 shadow-sm">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
@@ -160,11 +241,19 @@ export default function BiblioliogiaPage() {
                 </li>
                 <li className="flex justify-between">
                   <span>Versículos:</span>
-                  <span className="font-medium">~31,102</span>
+                  <span className="font-medium">31,102</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Palabras (aproximadamente):</span>
-                  <span className="font-medium">~783,137</span>
+                  <span className="font-medium">783,137</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Letras (aproximadamente):</span>
+                  <span className="font-medium">3,566,480</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Idiomas originales:</span>
+                  <span className="font-medium">3 (Hebreo, Arameo, Griego)</span>
                 </li>
               </ul>
             </div>
@@ -189,15 +278,23 @@ export default function BiblioliogiaPage() {
                 </li>
                 <li className="flex justify-between">
                   <span>Versículo más corto:</span>
-                  <span className="font-medium">Juan 11:35</span>
+                  <span className="font-medium">Juan 11:35 ("Jesús lloró")</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Versículo del medio:</span>
+                  <span className="font-medium">Salmo 118:8</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Período de escritura:</span>
-                  <span className="font-medium">~1500 años</span>
+                  <span className="font-medium">~1,500 años</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Autores humanos:</span>
                   <span className="font-medium">~40</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Palabra más repetida:</span>
+                  <span className="font-medium">"Señor" (~7,000 veces)</span>
                 </li>
               </ul>
             </div>
@@ -206,6 +303,66 @@ export default function BiblioliogiaPage() {
       </section>
 
       <section className="mb-12">
+        <h2 className="section-heading text-center mb-6">Traducciones y Versiones</h2>
+        <div className="max-w-4xl mx-auto bg-white rounded-xl p-6 shadow-sm overflow-x-auto">
+          <table className="min-w-full">
+            <thead>
+              <tr className="bg-gray-50 text-left">
+                <th className="py-3 px-4 font-semibold text-burgundy">Versión</th>
+                <th className="py-3 px-4 font-semibold text-burgundy">Año</th>
+                <th className="py-3 px-4 font-semibold text-burgundy">Idioma</th>
+                <th className="py-3 px-4 font-semibold text-burgundy">Características</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              <tr>
+                <td className="py-3 px-4 font-medium">Reina Valera</td>
+                <td className="py-3 px-4">1569/1602</td>
+                <td className="py-3 px-4">Español</td>
+                <td className="py-3 px-4">Primera traducción completa al español, basada en textos originales</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Reina Valera 1960</td>
+                <td className="py-3 px-4">1960</td>
+                <td className="py-3 px-4">Español</td>
+                <td className="py-3 px-4">Revisión muy usada en iglesias evangélicas hispanohablantes</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Nueva Versión Internacional</td>
+                <td className="py-3 px-4">1999</td>
+                <td className="py-3 px-4">Español</td>
+                <td className="py-3 px-4">Enfoque en equivalencia dinámica, lenguaje contemporáneo</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">La Biblia de las Américas</td>
+                <td className="py-3 px-4">1986</td>
+                <td className="py-3 px-4">Español</td>
+                <td className="py-3 px-4">Traducción literal, utilizada para estudio bíblico</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Biblia Textual</td>
+                <td className="py-3 px-4">1999/2010</td>
+                <td className="py-3 px-4">Español</td>
+                <td className="py-3 px-4">Apego estricto a los textos originales</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">King James Version</td>
+                <td className="py-3 px-4">1611</td>
+                <td className="py-3 px-4">Inglés</td>
+                <td className="py-3 px-4">Versión clásica en inglés con gran influencia histórica</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Biblia del Jubileo</td>
+                <td className="py-3 px-4">2000</td>
+                <td className="py-3 px-4">Español</td>
+                <td className="py-3 px-4">Basada en el Textus Receptus, con énfasis en la exactitud</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
         <h2 className="section-heading text-center mb-6">Cronología Bíblica Simplificada</h2>
         <div className="overflow-x-auto max-w-4xl mx-auto bg-white rounded-xl p-6 shadow-sm">
           <table className="min-w-full">
