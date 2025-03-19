@@ -1,4 +1,3 @@
-
 import { Book, BookOpen, FileText, LibraryBig, ChevronRight, BookText, BarChart2 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -303,59 +302,66 @@ export default function BibliaPage() {
       </section>
 
       <section className="mb-12">
-        <h2 className="section-heading text-center mb-6">Traducciones y Versiones</h2>
+        <h2 className="section-heading text-center mb-6">Traducciones y Versiones en Español</h2>
         <div className="max-w-4xl mx-auto bg-white rounded-xl p-6 shadow-sm overflow-x-auto">
           <table className="min-w-full">
             <thead>
               <tr className="bg-gray-50 text-left">
                 <th className="py-3 px-4 font-semibold text-burgundy">Versión</th>
                 <th className="py-3 px-4 font-semibold text-burgundy">Año</th>
-                <th className="py-3 px-4 font-semibold text-burgundy">Idioma</th>
                 <th className="py-3 px-4 font-semibold text-burgundy">Características</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               <tr>
-                <td className="py-3 px-4 font-medium">Reina Valera</td>
-                <td className="py-3 px-4">1569/1602</td>
-                <td className="py-3 px-4">Español</td>
-                <td className="py-3 px-4">Primera traducción completa al español, basada en textos originales</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Reina Valera 1960</td>
+                <td className="py-3 px-4 font-medium">Reina Valera 1960 (RV60)</td>
                 <td className="py-3 px-4">1960</td>
-                <td className="py-3 px-4">Español</td>
-                <td className="py-3 px-4">Revisión muy usada en iglesias evangélicas hispanohablantes</td>
+                <td className="py-3 px-4">Revisión muy usada en iglesias evangélicas hispanohablantes, fiel a los textos originales</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium">Nueva Versión Internacional</td>
+                <td className="py-3 px-4 font-medium">Nueva Versión Internacional (NVI)</td>
                 <td className="py-3 px-4">1999</td>
-                <td className="py-3 px-4">Español</td>
-                <td className="py-3 px-4">Enfoque en equivalencia dinámica, lenguaje contemporáneo</td>
+                <td className="py-3 px-4">Equilibrio entre fidelidad y claridad, lenguaje contemporáneo, muy usada para estudio</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium">La Biblia de las Américas</td>
+                <td className="py-3 px-4 font-medium">Reina Valera Contemporánea (RVC)</td>
+                <td className="py-3 px-4">2011</td>
+                <td className="py-3 px-4">Actualización moderna de la Reina Valera con lenguaje contemporáneo</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Nueva Traducción Viviente (NTV)</td>
+                <td className="py-3 px-4">2010</td>
+                <td className="py-3 px-4">Traducción dinámica con lenguaje claro y accesible para nuevos lectores</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">La Biblia de las Américas (LBLA)</td>
                 <td className="py-3 px-4">1986</td>
-                <td className="py-3 px-4">Español</td>
-                <td className="py-3 px-4">Traducción literal, utilizada para estudio bíblico</td>
+                <td className="py-3 px-4">Traducción literal, muy apreciada para estudio bíblico profundo</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium">Biblia Textual</td>
+                <td className="py-3 px-4 font-medium">Dios Habla Hoy (DHH)</td>
+                <td className="py-3 px-4">1979</td>
+                <td className="py-3 px-4">Enfoque en equivalencia dinámica para transmitir sentido en lenguaje cotidiano</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Palabra de Dios para Todos (PDT)</td>
+                <td className="py-3 px-4">2005</td>
+                <td className="py-3 px-4">Diseñada para ser fácil de entender, usa vocabulario básico de 1000-2000 palabras</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Reina Valera Gómez (RVG)</td>
+                <td className="py-3 px-4">2010</td>
+                <td className="py-3 px-4">Revisión conservadora basada en el Textus Receptus, usada en iglesias tradicionales</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Biblia Textual (BTX)</td>
                 <td className="py-3 px-4">1999/2010</td>
-                <td className="py-3 px-4">Español</td>
-                <td className="py-3 px-4">Apego estricto a los textos originales</td>
+                <td className="py-3 px-4">Apego estricto a los textos originales, incluye aparato crítico para estudio</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium">King James Version</td>
-                <td className="py-3 px-4">1611</td>
-                <td className="py-3 px-4">Inglés</td>
-                <td className="py-3 px-4">Versión clásica en inglés con gran influencia histórica</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Biblia del Jubileo</td>
-                <td className="py-3 px-4">2000</td>
-                <td className="py-3 px-4">Español</td>
-                <td className="py-3 px-4">Basada en el Textus Receptus, con énfasis en la exactitud</td>
+                <td className="py-3 px-4 font-medium">La Biblia de Jerusalén</td>
+                <td className="py-3 px-4">1998/2009</td>
+                <td className="py-3 px-4">Traducción con abundantes notas explicativas, apreciada por su valor académico</td>
               </tr>
             </tbody>
           </table>
@@ -426,3 +432,4 @@ export default function BibliaPage() {
     </div>
   );
 }
+

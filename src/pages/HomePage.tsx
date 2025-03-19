@@ -18,10 +18,10 @@ export default function HomePage() {
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           <FeatureCard
-            title="Bibliología"
-            description="Explora recursos para entender la Bibliología, datos sobre la Biblia, sus subdivisiones y más."
+            title="Biblia"
+            description="Explora recursos para entender la Biblia, sus subdivisiones, capítulos, versículos y más."
             icon={<Book className="h-8 w-8" />}
-            to="/bibliologia"
+            to="/biblia"
           />
           
           <FeatureCard
