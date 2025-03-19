@@ -10,10 +10,6 @@ export default function HomePage() {
           <h1 className="text-3xl md:text-4xl font-bold text-burgundy mb-4 tracking-tighter">
             Bienvenido a <span className="text-black tracking-tighter">biblionube</span>
           </h1>
-          <p className="text-lg text-gray-700 mb-8">
-            Recursos digitales para el estudio bíblico, bibliología, ayudas para cada libro 
-            y herramientas para predicadores evangélicos.
-          </p>
         </div>
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
@@ -45,7 +41,7 @@ export default function HomePage() {
           <h2 className="section-heading mb-4">¿Por qué biblionube?</h2>
           <p className="text-gray-700">
             Nuestro objetivo es proporcionar recursos accesibles y de calidad para el estudio bíblico, 
-            ayudando a los estudiantes evangélicos a profundizar en su conocimiento de las Escrituras.
+            ayudando a los predicadores a profundizar en su conocimiento de las Escrituras.
           </p>
         </div>
         

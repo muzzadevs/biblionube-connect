@@ -15,10 +15,10 @@ interface Tool {
 const tools: Tool[] = [
   {
     name: 'Indubiblia',
-    description: 'Índice bíblico para predicadores con más de 2.000 temas y esquemas de predicación.',
-    url: 'https://indubiblia.org',
+    description: 'Sitio web dedicado al estudio inductivo de la palabra y mucho más.',
+    url: 'https://www.indubiblia.org/',
     icon: <BookOpen className="h-8 w-8" />,
-    category: 'predicacion'
+    category: 'estudio'
   },
   {
     name: 'LogosK',
@@ -35,22 +35,15 @@ const tools: Tool[] = [
     category: 'estudio'
   },
   {
-    name: 'Proyecto Biblia',
-    description: 'Recurso en español con comentarios, guías de estudio y herramientas para el estudio bíblico.',
-    url: 'https://www.proyectobiblia.org',
-    icon: <Globe className="h-8 w-8" />,
-    category: 'estudio'
-  },
-  {
     name: 'Google Workspace',
-    description: 'Suite de aplicaciones de Google para organizar documentos, presentaciones y calendarios.',
+    description: 'Suite de aplicaciones de Google para organizar documentos, predicaciones, estudios, presentaciones y calendarios.',
     url: 'https://workspace.google.com',
     icon: <Computer className="h-8 w-8" />,
     category: 'software'
   },
   {
     name: 'ChatGPT',
-    description: 'Herramienta de IA para ayudar en la investigación bíblica y la preparación de estudios.',
+    description: 'Herramienta de IA para ayudar en la investigación bíblica y la preparación de estudios o predicaciones.',
     url: 'https://chat.openai.com',
     icon: <Search className="h-8 w-8" />,
     category: 'software'
@@ -63,22 +56,15 @@ const tools: Tool[] = [
     category: 'estudio'
   },
   {
-    name: 'Blue Letter Bible',
-    description: 'Herramienta de estudio bíblico con textos originales y recursos de referencia.',
-    url: 'https://www.blueletterbible.org',
-    icon: <BookText className="h-8 w-8" />,
-    category: 'estudio'
-  },
-  {
     name: 'BibleGateway',
-    description: 'Acceso a múltiples traducciones de la Biblia y herramientas de búsqueda.',
+    description: 'Acceso a múltiples traducciones de la Biblia.',
     url: 'https://www.biblegateway.com/versions/Reina-Valera-1960-RVR1960-Biblia/',
     icon: <Globe className="h-8 w-8" />,
     category: 'estudio'
   },
   {
     name: 'Canva',
-    description: 'Plataforma de diseño para crear presentaciones y gráficos para sermones.',
+    description: 'Plataforma de diseño para crear presentaciones y gráficos para predicaciones.',
     url: 'https://www.canva.com',
     icon: <Computer className="h-8 w-8" />,
     category: 'software'
@@ -89,13 +75,6 @@ const tools: Tool[] = [
     url: 'https://www.logos.com',
     icon: <Crown className="h-8 w-8" />,
     category: 'software'
-  },
-  {
-    name: 'Bible.is',
-    description: 'Audio Biblias en múltiples idiomas y traducciones.',
-    url: 'https://www.bible.is/es',
-    icon: <Youtube className="h-8 w-8" />,
-    category: 'predicacion'
   }
 ];
 
@@ -145,35 +124,6 @@ export default function HerramientasPage() {
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="section-heading mb-6 flex items-center justify-center">
-          <Briefcase className="h-6 w-6 mr-2" />
-          Herramientas para Predicación
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {predicacionTools.map((tool) => (
-            <Card key={tool.name} className="animate-fade-in">
-              <CardHeader className="pb-2">
-                <div className="flex items-start justify-between">
-                  <div className="text-burgundy bg-gray-50 p-3 rounded-full">
-                    {tool.icon}
-                  </div>
-                </div>
-                <CardTitle className="mt-4">{tool.name}</CardTitle>
-                <CardDescription>{tool.description}</CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <a href={tool.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                  <Button variant="outline" className="w-full flex items-center justify-center">
-                    Visitar Sitio
-                    <ExternalLink className="h-4 w-4 ml-2" />
-                  </Button>
-                </a>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </section>
 
       <section className="mb-12">
         <h2 className="section-heading mb-6 flex items-center justify-center">
