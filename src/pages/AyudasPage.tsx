@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { BookOpen, Book, BookText } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getBooksByTestament } from '../data/bibleBooks';
-import { antiguoTestamento, nuevoTestamento } from '../assets/images';
 
 export default function AyudasPage() {
   const [activeTab, setActiveTab] = useState<'antiguo' | 'nuevo'>('antiguo');
   
-  const antiguoTestamentoBooks = getBooksByTestament('antiguo');
-  const nuevoTestamentoBooks = getBooksByTestament('nuevo');
+  const antiguoTestamento = getBooksByTestament('antiguo');
+  const nuevoTestamento = getBooksByTestament('nuevo');
 
   const categorias = (testamento: 'antiguo' | 'nuevo') => {
     if (testamento === 'antiguo') {
@@ -23,9 +22,9 @@ export default function AyudasPage() {
   // Función para obtener los libros de una categoría específica
   const getBooksByCategory = (categoria: string) => {
     if (activeTab === 'antiguo') {
-      return antiguoTestamentoBooks.filter(book => book.categoria === categoria);
+      return antiguoTestamento.filter(book => book.categoria === categoria);
     } else {
-      return nuevoTestamentoBooks.filter(book => book.categoria === categoria);
+      return nuevoTestamento.filter(book => book.categoria === categoria);
     }
   };
 
@@ -49,23 +48,12 @@ export default function AyudasPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <header className="mb-8 text-center relative overflow-hidden rounded-xl py-10">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={activeTab === 'antiguo' ? antiguoTestamento : nuevoTestamento} 
-            alt={activeTab === 'antiguo' ? "Antiguo Testamento" : "Nuevo Testamento"} 
-            className="w-full h-full object-cover opacity-10 dark:opacity-5"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70 dark:from-gray-900/90 dark:to-gray-900/70"></div>
-        </div>
-        
-        <div className="relative z-10">
-          <h1 className="text-3xl font-bold text-burgundy mb-2">Ayudas Bíblicas</h1>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Explora información detallada sobre cada libro de la Biblia, incluyendo resúmenes, bosquejos, 
-            contexto histórico, teología y más.
-          </p>
-        </div>
+      <header className="mb-8 text-center">
+        <h1 className="text-3xl font-bold text-burgundy mb-2">Ayudas Bíblicas</h1>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Explora información detallada sobre cada libro de la Biblia, incluyendo resúmenes, bosquejos, 
+          contexto histórico, teología y más.
+        </p>
       </header>
 
       <Tabs defaultValue="antiguo" className="max-w-5xl mx-auto" onValueChange={(value) => setActiveTab(value as 'antiguo' | 'nuevo')}>
@@ -97,7 +85,7 @@ export default function AyudasPage() {
                       <div className="flex flex-col items-center">
                         <Book className="h-6 w-6 text-burgundy mb-2" />
                         <h3 className="font-medium text-center">{book.nombre}</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{book.capitulos} capítulos</p>
+                        <p className="text-xs text-gray-500 mt-1">{book.capitulos} capítulos</p>
                       </div>
                     </Link>
                   ))}
@@ -122,7 +110,7 @@ export default function AyudasPage() {
                       <div className="flex flex-col items-center">
                         <Book className="h-6 w-6 text-burgundy mb-2" />
                         <h3 className="font-medium text-center">{book.nombre}</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{book.capitulos} capítulos</p>
+                        <p className="text-xs text-gray-500 mt-1">{book.capitulos} capítulos</p>
                       </div>
                     </Link>
                   ))}

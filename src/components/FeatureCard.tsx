@@ -1,36 +1,30 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 interface FeatureCardProps {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   to: string;
-  image?: string;
+  className?: string;
 }
 
-const FeatureCard = ({ title, description, icon, to, image }: FeatureCardProps) => {
+export default function FeatureCard({ title, description, icon, to, className }: FeatureCardProps) {
   return (
-    <Link to={to} className="feature-card group relative overflow-hidden">
-      {image && (
-        <div className="absolute inset-0 -z-10">
-          <img 
-            src={image} 
-            alt={title} 
-            className="w-full h-full object-cover opacity-10 group-hover:opacity-15 transition-opacity"
-          />
-        </div>
+    <Link 
+      to={to}
+      className={cn(
+        "feature-card group flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-burgundy/20 animate-fade-in", 
+        className
       )}
-      <div className="flex flex-col items-center text-center z-10">
-        <div className="text-burgundy p-3 mb-3 rounded-full bg-burgundy/10">
-          {icon}
-        </div>
-        <h3 className="card-heading">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-400 text-sm">{description}</p>
+    >
+      <div className="mb-4 text-burgundy p-3 bg-gray-50 rounded-full group-hover:bg-burgundy/10 transition-colors duration-300">
+        {icon}
       </div>
+      <h3 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-burgundy transition-colors duration-300">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
     </Link>
   );
-};
-
-export default FeatureCard;
+}
