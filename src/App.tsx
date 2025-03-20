@@ -4,7 +4,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+import { AppSidebar } from "./components/AppSidebar";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import BibliaPage from "./pages/BibliaPage";
@@ -22,22 +24,29 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen flex flex-col bg-gray-50">
-          <Navbar />
-          <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/biblia" element={<BibliaPage />} />
-              <Route path="/ayudas" element={<AyudasPage />} />
-              <Route path="/ayudas/:testamento/:libro" element={<BookDetailPage />} />
-              <Route path="/herramientas" element={<HerramientasPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <footer className="py-4 px-6 text-center text-gray-500 text-sm border-t border-gray-200">
-            <p>© {new Date().getFullYear()} biblionube. Todos los derechos reservados.</p>
-          </footer>
-        </div>
+        <SidebarProvider defaultOpen={true}>
+          <div className="min-h-screen flex w-full bg-background text-foreground">
+            <AppSidebar />
+            <SidebarInset>
+              <div className="flex flex-col h-full">
+                <Navbar />
+                <main className="flex-1 p-4">
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/biblia" element={<BibliaPage />} />
+                    <Route path="/ayudas" element={<AyudasPage />} />
+                    <Route path="/ayudas/:testamento/:libro" element={<BookDetailPage />} />
+                    <Route path="/herramientas" element={<HerramientasPage />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+                <footer className="py-4 px-6 text-center text-muted-foreground text-sm border-t border-border">
+                  <p>© {new Date().getFullYear()} biblionube. Todos los derechos reservados.</p>
+                </footer>
+              </div>
+            </SidebarInset>
+          </div>
+        </SidebarProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
