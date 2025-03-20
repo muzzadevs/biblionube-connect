@@ -45,6 +45,9 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --burgundy: 350 50% 40%;
+    --burgundy-dark: 350 50% 30%;
   }
 
   .dark {
@@ -83,6 +86,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --burgundy: 350 70% 60%;
+    --burgundy-dark: 350 70% 50%;
   }
 }
 
@@ -96,8 +102,8 @@
   }
   
   .feature-card {
-    @apply bg-white rounded-xl shadow-md p-6 transition-all duration-300
-    hover:shadow-lg hover:-translate-y-1 border border-gray-100;
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition-all duration-300
+    hover:shadow-lg hover:-translate-y-1 border border-gray-100 dark:border-gray-700;
   }
   
   .section-heading {
@@ -105,11 +111,11 @@
   }
   
   .card-heading {
-    @apply text-lg font-medium text-gray-900 mb-2;
+    @apply text-lg font-medium text-gray-900 dark:text-gray-100 mb-2;
   }
   
   .bible-card {
-    @apply bg-white rounded-lg shadow-md p-4 transition-all duration-300
-    hover:shadow-lg hover:-translate-y-1 cursor-pointer border-l-4;
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transition-all duration-300
+    hover:shadow-lg hover:-translate-y-1 cursor-pointer border-l-4 dark:text-gray-100;
   }
 }

@@ -1,8 +1,8 @@
 
-import { ExternalLink, BookOpen, BookText, Globe, Computer, Briefcase, Search, Crown, Youtube, Video } from 'lucide-react';
+import { ExternalLink, BookOpen, BookText, Globe, Computer, Search, Crown, Video } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import { digitalTools, studyTools } from '../assets/images';
 
 interface Tool {
   name: string;
@@ -86,12 +86,23 @@ export default function HerramientasPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <header className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-burgundy mb-2">Herramientas para Predicadores</h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Descubre recursos digitales, software y herramientas que te ayudarán en tu ministerio 
-          de predicación y estudio bíblico.
-        </p>
+      <header className="mb-12 relative overflow-hidden rounded-xl">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={digitalTools} 
+            alt="Herramientas digitales" 
+            className="w-full h-full object-cover opacity-20 dark:opacity-10"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/50 dark:from-gray-900/90 dark:to-gray-900/60"></div>
+        </div>
+        
+        <div className="relative z-10 py-16 px-6 text-center">
+          <h1 className="text-3xl font-bold text-burgundy mb-2">Herramientas para Predicadores</h1>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Descubre recursos digitales, software y herramientas que te ayudarán en tu ministerio 
+            de predicación y estudio bíblico.
+          </p>
+        </div>
       </header>
 
       <section className="mb-12">
@@ -101,17 +112,24 @@ export default function HerramientasPage() {
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {estudioTools.map((tool) => (
-            <Card key={tool.name} className="animate-fade-in">
-              <CardHeader className="pb-2">
+            <Card key={tool.name} className="animate-fade-in relative overflow-hidden">
+              <div className="absolute right-0 top-0 h-full w-1/3 opacity-5 z-0">
+                <img 
+                  src={studyTools} 
+                  alt="Herramientas de estudio" 
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <CardHeader className="pb-2 relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-burgundy bg-gray-50 p-3 rounded-full">
+                  <div className="text-burgundy bg-gray-50 dark:bg-gray-700 p-3 rounded-full">
                     {tool.icon}
                   </div>
                 </div>
                 <CardTitle className="mt-4">{tool.name}</CardTitle>
                 <CardDescription>{tool.description}</CardDescription>
               </CardHeader>
-              <CardFooter>
+              <CardFooter className="relative z-10">
                 <a href={tool.url} target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button variant="outline" className="w-full flex items-center justify-center">
                     Visitar Sitio
@@ -132,17 +150,24 @@ export default function HerramientasPage() {
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {softwareTools.map((tool) => (
-            <Card key={tool.name} className="animate-fade-in">
-              <CardHeader className="pb-2">
+            <Card key={tool.name} className="animate-fade-in relative overflow-hidden">
+              <div className="absolute right-0 top-0 h-full w-1/3 opacity-5 z-0">
+                <img 
+                  src={digitalTools} 
+                  alt="Software" 
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <CardHeader className="pb-2 relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-burgundy bg-gray-50 p-3 rounded-full">
+                  <div className="text-burgundy bg-gray-50 dark:bg-gray-700 p-3 rounded-full">
                     {tool.icon}
                   </div>
                 </div>
                 <CardTitle className="mt-4">{tool.name}</CardTitle>
                 <CardDescription>{tool.description}</CardDescription>
               </CardHeader>
-              <CardFooter>
+              <CardFooter className="relative z-10">
                 <a href={tool.url} target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button variant="outline" className="w-full flex items-center justify-center">
                     Visitar Sitio
@@ -155,14 +180,14 @@ export default function HerramientasPage() {
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+      <section className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
         <h2 className="text-xl font-semibold text-burgundy mb-4">Recomendaciones para Predicadores</h2>
         <ul className="space-y-3">
           <li className="flex">
             <div className="mr-3 text-burgundy">
               <BookOpen className="h-5 w-5" />
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               <strong>Estudio constante:</strong> Dedica tiempo regularmente al estudio de la Palabra, 
               utilizando las herramientas mencionadas para profundizar.
             </p>
@@ -171,7 +196,7 @@ export default function HerramientasPage() {
             <div className="mr-3 text-burgundy">
               <Search className="h-5 w-5" />
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               <strong>Investigación diligente:</strong> Utiliza múltiples fuentes y recursos para 
               obtener una comprensión más completa de los textos bíblicos.
             </p>
@@ -180,7 +205,7 @@ export default function HerramientasPage() {
             <div className="mr-3 text-burgundy">
               <Computer className="h-5 w-5" />
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               <strong>Organización digital:</strong> Mantén tus notas, sermones y recursos organizados 
               utilizando herramientas digitales para acceder a ellos fácilmente.
             </p>
