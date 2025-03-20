@@ -296,68 +296,103 @@ export default function BibliaPage() {
 
       <section className="mb-12">
         <h2 className="section-heading text-center mb-6">Traducciones y Versiones en Español</h2>
-        <div className="max-w-4xl mx-auto bg-white rounded-xl p-6 shadow-sm overflow-x-auto">
-          <table className="min-w-full">
-            <thead>
-              <tr className="bg-gray-50 text-left">
-                <th className="py-3 px-4 font-semibold text-burgundy">Versión</th>
-                <th className="py-3 px-4 font-semibold text-burgundy">Año</th>
-                <th className="py-3 px-4 font-semibold text-burgundy">Características</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              <tr>
-                <td className="py-3 px-4 font-medium">Reina Valera 1960 (RV60)</td>
-                <td className="py-3 px-4">1960</td>
-                <td className="py-3 px-4">Revisión muy usada en iglesias evangélicas hispanohablantes, fiel a los textos originales</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Nueva Versión Internacional (NVI)</td>
-                <td className="py-3 px-4">1999</td>
-                <td className="py-3 px-4">Equilibrio entre fidelidad y claridad, lenguaje contemporáneo, muy usada para estudio</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Reina Valera Contemporánea (RVC)</td>
-                <td className="py-3 px-4">2011</td>
-                <td className="py-3 px-4">Actualización moderna de la Reina Valera con lenguaje contemporáneo</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Nueva Traducción Viviente (NTV)</td>
-                <td className="py-3 px-4">2010</td>
-                <td className="py-3 px-4">Traducción dinámica con lenguaje claro y accesible para nuevos lectores</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">La Biblia de las Américas (LBLA)</td>
-                <td className="py-3 px-4">1986</td>
-                <td className="py-3 px-4">Traducción literal, muy apreciada para estudio bíblico profundo</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Dios Habla Hoy (DHH)</td>
-                <td className="py-3 px-4">1979</td>
-                <td className="py-3 px-4">Enfoque en equivalencia dinámica para transmitir sentido en lenguaje cotidiano</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Palabra de Dios para Todos (PDT)</td>
-                <td className="py-3 px-4">2005</td>
-                <td className="py-3 px-4">Diseñada para ser fácil de entender, usa vocabulario básico de 1000-2000 palabras</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Reina Valera Gómez (RVG)</td>
-                <td className="py-3 px-4">2010</td>
-                <td className="py-3 px-4">Revisión conservadora basada en el Textus Receptus, usada en iglesias tradicionales</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Biblia Textual (BTX)</td>
-                <td className="py-3 px-4">1999/2010</td>
-                <td className="py-3 px-4">Apego estricto a los textos originales, incluye aparato crítico para estudio</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">La Biblia de Jerusalén</td>
-                <td className="py-3 px-4">1998/2009</td>
-                <td className="py-3 px-4">Traducción con abundantes notas explicativas, apreciada por su valor académico</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="shadow-sm">
+              <CardHeader className="bg-gray-50 border-b">
+                <CardTitle className="text-lg flex items-center text-burgundy">
+                  <Book className="h-5 w-5 mr-2" />
+                  Reina Valera 1960 (RV60)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  <p><span className="font-semibold">Año:</span> 1960</p>
+                  <p><span className="font-semibold">Historia:</span> Revisión de la traducción clásica de Casiodoro de Reina (1569) y Cipriano de Valera (1602). Realizada por un comité de eruditos bíblicos bajo los auspicios de las Sociedades Bíblicas Unidas.</p>
+                  <p><span className="font-semibold">Enfoque de traducción:</span> Equivalencia formal (más literal) que busca preservar la estructura gramatical y sintáctica del texto original.</p>
+                  <p><span className="font-semibold">Características:</span> Lenguaje clásico y formal con uso del "tú", vocabulario tradicional, conserva términos teológicos históricos.</p>
+                  <p><span className="font-semibold">Uso principal:</span> Es la versión más utilizada en iglesias evangélicas hispanohablantes por su precisión y fidelidad a los textos originales.</p>
+                  <div className="mt-2 bg-gray-50 p-3 rounded text-sm italic">
+                    "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna." <span className="font-medium">— Juan 3:16 (RV60)</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-sm">
+              <CardHeader className="bg-gray-50 border-b">
+                <CardTitle className="text-lg flex items-center text-burgundy">
+                  <Book className="h-5 w-5 mr-2" />
+                  Nueva Versión Internacional (NVI)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  <p><span className="font-semibold">Año:</span> 1999 (edición en español)</p>
+                  <p><span className="font-semibold">Historia:</span> Proyecto de la Sociedad Bíblica Internacional (ahora Biblica) que buscaba crear una traducción contemporánea equivalente a la NIV en inglés. Realizada por un equipo internacional de eruditos evangélicos.</p>
+                  <p><span className="font-semibold">Enfoque de traducción:</span> Equilibrio entre equivalencia formal y dinámica, busca precisión y claridad al mismo tiempo.</p>
+                  <p><span className="font-semibold">Características:</span> Lenguaje contemporáneo accesible pero no coloquial, buenas notas al pie, clara separación entre párrafos y coherencia en la traducción de términos.</p>
+                  <p><span className="font-semibold">Uso principal:</span> Muy usada para estudio bíblico serio y predicación por su equilibrio entre fidelidad y claridad.</p>
+                  <div className="mt-2 bg-gray-50 p-3 rounded text-sm italic">
+                    "Porque tanto amó Dios al mundo que dio a su Hijo unigénito, para que todo el que cree en él no se pierda, sino que tenga vida eterna." <span className="font-medium">— Juan 3:16 (NVI)</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-sm">
+              <CardHeader className="bg-gray-50 border-b">
+                <CardTitle className="text-lg flex items-center text-burgundy">
+                  <Book className="h-5 w-5 mr-2" />
+                  Nueva Traducción Viviente (NTV)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  <p><span className="font-semibold">Año:</span> 2010 (edición en español)</p>
+                  <p><span className="font-semibold">Historia:</span> Adaptación al español de la "New Living Translation", realizada por un equipo de traductores bajo la dirección de Tyndale House Publishers.</p>
+                  <p><span className="font-semibold">Enfoque de traducción:</span> Equivalencia dinámica (funcional) que prioriza la comunicación del significado sobre la estructura lingüística original.</p>
+                  <p><span className="font-semibold">Características:</span> Lenguaje natural, fluidez de lectura, términos contemporáneos, excelente legibilidad, evita ambigüedades y usa expresiones actuales.</p>
+                  <p><span className="font-semibold">Uso principal:</span> Ideal para nuevos lectores, devocionales, y lectura continua por su claridad y fluidez. También usada en evangelismo por su accesibilidad.</p>
+                  <div className="mt-2 bg-gray-50 p-3 rounded text-sm italic">
+                    "Pues Dios amó tanto al mundo que dio a su único Hijo, para que todo el que crea en Él, no se pierda, mas tenga vida eterna." <span className="font-medium">— Juan 3:16 (NTV)</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-sm">
+              <CardHeader className="bg-gray-50 border-b">
+                <CardTitle className="text-lg flex items-center text-burgundy">
+                  <Book className="h-5 w-5 mr-2" />
+                  La Biblia de las Américas (LBLA)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  <p><span className="font-semibold">Año:</span> 1986</p>
+                  <p><span className="font-semibold">Historia:</span> Desarrollada por La Fundación Lockman como una traducción literal actualizada en español. Basada en los mismos principios que su versión en inglés (NASB).</p>
+                  <p><span className="font-semibold">Enfoque de traducción:</span> Equivalencia formal (muy literal) con alta fidelidad a los textos originales en hebreo, arameo y griego.</p>
+                  <p><span className="font-semibold">Características:</span> Alta precisión académica, uso de cursivas para palabras añadidas para claridad, notas marginales con traducciones alternativas, retiene matices del lenguaje original.</p>
+                  <p><span className="font-semibold">Uso principal:</span> Excelente para estudios bíblicos profundos, exégesis, y formación teológica. Preferida por estudiosos y pastores para preparación de sermones.</p>
+                  <div className="mt-2 bg-gray-50 p-3 rounded text-sm italic">
+                    "Porque de tal manera amó Dios al mundo, que dio a su Hijo unigénito, para que todo aquel que cree en Él, no se pierda, mas tenga vida eterna." <span className="font-medium">— Juan 3:16 (LBLA)</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-6 p-4 bg-white rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-3">¿Cómo elegir una traducción?</h3>
+            <p className="mb-3">La elección de una traducción bíblica depende de varios factores:</p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li><span className="font-medium">Propósito de lectura:</span> Para estudio profundo, considere traducciones más literales (RV60, LBLA). Para lectura devocional, versiones más dinámicas (NTV).</li>
+              <li><span className="font-medium">Nivel de familiaridad con lenguaje bíblico:</span> Nuevos lectores pueden beneficiarse de versiones como NTV, mientras que lectores experimentados pueden preferir RV60 o LBLA.</li>
+              <li><span className="font-medium">Equilibrio:</span> La NVI ofrece un buen balance entre precisión y claridad.</li>
+              <li><span className="font-medium">Uso complementario:</span> Muchos estudiosos recomiendan comparar varias traducciones para obtener una comprensión más rica del texto.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
