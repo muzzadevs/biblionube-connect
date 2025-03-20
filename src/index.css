@@ -39,22 +39,22 @@
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 0 100% 25%; /* Burgundy color */
+    --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 0 100% 25%; /* Burgundy color */
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 47.4% 11.2%;
+    --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 47.4% 11.2%;
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 47.4% 11.2%;
+    --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
@@ -75,15 +75,14 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    
-    --sidebar-background: 222.2 47.4% 11.2%;
-    --sidebar-foreground: 210 40% 90%;
-    --sidebar-primary: 0 70% 40%; /* Darker Burgundy for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217.2 32.6% 17.5%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 0 70% 50%; /* Burgundy with higher luminosity for dark mode */
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -97,8 +96,8 @@
   }
   
   .feature-card {
-    @apply bg-card rounded-xl shadow-md p-6 transition-all duration-300
-    hover:shadow-lg hover:-translate-y-1 border border-border;
+    @apply bg-white rounded-xl shadow-md p-6 transition-all duration-300
+    hover:shadow-lg hover:-translate-y-1 border border-gray-100;
   }
   
   .section-heading {
@@ -106,39 +105,11 @@
   }
   
   .card-heading {
-    @apply text-lg font-medium text-foreground mb-2;
+    @apply text-lg font-medium text-gray-900 mb-2;
   }
   
   .bible-card {
-    @apply bg-card rounded-lg shadow-md p-4 transition-all duration-300
+    @apply bg-white rounded-lg shadow-md p-4 transition-all duration-300
     hover:shadow-lg hover:-translate-y-1 cursor-pointer border-l-4;
-  }
-
-  .dashboard-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
-  }
-  
-  .dashboard-card {
-    @apply bg-card rounded-xl shadow-sm p-6 border border-border
-    transition-all duration-300 hover:shadow-md;
-  }
-  
-  .dashboard-section {
-    @apply space-y-6;
-  }
-}
-
-@layer utilities {
-  .glass-effect {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-sm;
-  }
-  
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
   }
 }
