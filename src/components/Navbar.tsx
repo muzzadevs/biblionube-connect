@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Book, BookOpen, HelpCircle, Wrench } from "lucide-react";
+import { Menu, X, Book, BookOpen, HelpCircle, Wrench, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -20,6 +20,7 @@ export default function Navbar() {
     { name: "Inicio", href: "/", icon: <BookOpen className="h-4 w-4 mr-2" /> },
     { name: "Biblia", href: "/biblia", icon: <Book className="h-4 w-4 mr-2" /> },
     { name: "Ayudas", href: "/ayudas", icon: <HelpCircle className="h-4 w-4 mr-2" /> },
+    { name: "Apologética", href: "/apologetica", icon: <Shield className="h-4 w-4 mr-2" /> },
     { name: "Herramientas", href: "/herramientas", icon: <Wrench className="h-4 w-4 mr-2" /> },
   ];
 

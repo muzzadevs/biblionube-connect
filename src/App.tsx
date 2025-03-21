@@ -11,6 +11,7 @@ import BibliaPage from "./pages/BibliaPage";
 import AyudasPage from "./pages/AyudasPage";
 import BookDetailPage from "./pages/BookDetailPage";
 import HerramientasPage from "./pages/HerramientasPage";
+import ApologeticaPage from "./pages/ApologeticaPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/biblia" element={<BibliaPage />} />
               <Route path="/ayudas" element={<AyudasPage />} />
               <Route path="/ayudas/:testamento/:libro" element={<BookDetailPage />} />
+              <Route path="/apologetica" element={<ApologeticaPage />} />
               <Route path="/herramientas" element={<HerramientasPage />} />
               <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
